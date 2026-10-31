@@ -6,33 +6,33 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Status](https://img.shields.io/badge/Status-Portfolio%20Project-blue)
 
-A deep learning-based facial analysis project that performs real-time emotion recognition and gender classification from static images and live camera feeds. The repository uses a multi-task CNN architecture to classify seven emotional states and two gender labels in a single inference pipeline.
+A deep learning project for real-time emotion recognition and gender classification using image and live camera inputs. The system uses a multi-task CNN architecture to classify seven emotional states and two gender labels in a single end-to-end pipeline.
 
 ## Overview
 
-This project focuses on human-centered AI by recognizing facial expressions and gender from visual input. It is designed for computer vision research, interactive AI systems, and prototype deployment scenarios where efficient real-time classification is important.
+This project focuses on human-centered computer vision and affective computing. It demonstrates how facial images can be processed using a convolutional neural network to infer emotional state and gender, which is relevant to human-computer interaction, smart environments, and intelligent interface design.
 
 ## Why This Project Matters
 
-- Demonstrates CNN-based facial recognition and analysis
-- Combines emotion classification and gender prediction in one model
-- Supports real-time camera inputs for live classification
-- Highlights practical AI application in human-computer interaction
+- Demonstrates deep learning in visual emotion analysis
+- Combines emotion and gender recognition in one model pipeline
+- Supports real-time webcam inference for live demonstrations
+- Highlights applied AI and computer vision skills in a practical setting
 
-## Key Highlights
+## Key Features
 
 - 7 emotion classes
 - 2 gender classes
-- Live webcam inference support
-- Static image prediction pipeline
-- Multi-task CNN for shared feature learning
-- Training and evaluation workflow for model improvement
+- Static image inference
+- Live camera prediction
+- Multi-task CNN architecture for shared feature learning
+- Model training and evaluation workflow
 
-## Project Architecture
+## Architecture
 
 ```mermaid
 flowchart LR
-    A[Input Image / Live Camera Frame] --> B[Face Image Preprocessing]
+    A[Input Image / Camera Feed] --> B[Preprocessing]
     B --> C[Shared CNN Backbone]
     C --> D[Emotion Output Head]
     C --> E[Gender Output Head]
@@ -118,21 +118,19 @@ pip install -r requirements.txt
 python src/train.py
 ```
 
-### 5. Run inference on a single image
+### 5. Run image classification
 
 ```bash
 python src/inference.py --image path/to/sample.jpg --model models/emotion_gender_model.keras
 ```
 
-### 6. Run live camera detection
+### 6. Run live camera demo
 
 ```bash
 python src/live_demo.py --model models/emotion_gender_model.keras --camera 0
 ```
 
-## Dataset Format
-
-A typical dataset layout is:
+## Dataset Layout
 
 ```text
 data/
@@ -154,47 +152,34 @@ data/
     └── surprise/
 ```
 
-The model architecture is designed to be easily extended for annotated gender metadata as well.
-
 ## Model Design
 
-The core system uses a shared CNN backbone to extract important visual features from facial images, followed by two task-specific classification heads:
+The model is built using a shared CNN backbone followed by two classification heads:
 
-- Emotion classification head
-- Gender classification head
+- emotion output head for 7 classes
+- gender output head for 2 classes
 
-This design enables efficient multi-task learning and demonstrates a practical AI approach for simultaneous classification tasks.
+This multitask approach reduces redundant computation while enabling simultaneous predictions from a single input.
 
-## Evaluation and Metrics
+## Evaluation Strategy
 
-The model is evaluated using standard classification metrics including:
+The system can be evaluated using:
 
-- Accuracy
-- Loss curves
-- Confusion matrix analysis (when extended with labeled datasets)
-- Per-class performance review
-
-## Demo / Sample Output
-
-> Add a live-capture screenshot or a sample prediction result here for a polished recruitment-facing presentation.
-
-```text
-Sample Prediction
-----------------
-Emotion: Happy
-Gender: Female
-```
+- accuracy
+- loss curves
+- confusion matrices
+- per-class performance analysis
 
 ## Potential Applications
 
 - Human-computer interaction systems
-- Smart retail analytics
-- Adaptive interfaces and emotion-aware systems
-- Research prototypes in affective computing
+- Emotion-aware interfaces
+- Smart retail and customer experience analytics
+- Affective computing research prototypes
 
 ## Project Impact
 
-This project highlights the ability to build a practical deep learning system that analyzes human facial expressions and demographic attributes in real time. It reflects strong potential in applied AI, image classification, and computer vision research.
+This project demonstrates the ability to build a practical image classification application for real-time human analysis. It reflects strong skills in deep learning, computer vision, and AI model development for real-world use cases.
 
 ## License
 
@@ -202,11 +187,11 @@ This project is licensed under the MIT License.
 
 ## Future Enhancements
 
-- Face detection and alignment for better robustness
-- Improved attention-based architectures
-- Web-based interactive dashboard
+- Face detection and alignment preprocessing
+- Attention-based architecture improvements
+- Web interface for interactive evaluation
 - Deployment as a Streamlit or Flask application
 
 ---
 
-This project is presented as a professional image-classification solution for real-time human emotion and gender analysis.
+This repository is presented as a professional, portfolio-ready project in the field of computer vision and human emotion analysis.
